@@ -222,7 +222,7 @@ screen = pg.display.set_mode(size)
 # Loop until the user clicks the close button.
 clock = pg.time.Clock()
 fps = 60
-game = Tetris_Game(20, 25)
+game = Tetris_Game(30, 25)
 no_of_blocks = 0
 
 pressing_down = False
