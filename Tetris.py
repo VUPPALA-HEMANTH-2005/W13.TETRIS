@@ -280,7 +280,7 @@ while not completed:
                 pg.draw.rect(screen, colors[game.blocks[i][j]],
                                  [game.a + game.enlarge * j + 1, game.b + game.enlarge * i + 1, game.enlarge - 2, game.enlarge - 1])
 
-    #for taking the coordinates of the shapes
+    #for taking the coordinates of the grid
     if game.figure is not None:
         for i in range(4):
             for j in range(4):
