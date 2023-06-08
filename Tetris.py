@@ -206,3 +206,107 @@ class Tetris_Game:
         if rha.movement():
             rha.state = "The End"
                                             #Till Here the game appearance and the conditions of the game
+# Initializing the game engine
+pg.init()
+
+# Defining background colours
+COLOUR_1 = (0, 0, 0)
+COLOUR_2 = (255,255,255)
+COLOUR_3 = (65,74,156)
+#Size of the game screen
+size = (700, 800)
+pg.display.set_caption("Tetris")
+screen = pg.display.set_mode(size)
+
+
+# Loop until the user clicks the close button.
+clock = pg.time.Clock()
+fps = 60
+game = Tetris_Game(20, 25)
+no_of_blocks = 0
+
+pressing_down = False
+
+while not completed:
+    
+    #The condition for the new block to come
+    if game.figure is None:
+        game.new_figure()
+    no_of_blocks += 1
+
+    #When the result is above 100000 the game resets
+    if no_of_blocks > 100000:
+        no_of_blocks = 0
+
+    #
+    if no_of_blocks % (fps // game.speed // 2) == 0 or pressing_down:
+        if game.state == "start":
+            game.enter_down()
+
+    for event in pg.event.get():
+        #For the game to close when you pressed the cross button
+        if event.type == pg.QUIT:
+            completed = True
+        #KEYDOWN is a function in pygame that enables to use the keyboard keys
+        if event.type == pg.KEYDOWN:
+            #when we press up arrow the figure rotates
+            if event.key == pg.K_UP:
+                game.rotate()
+            #when we press left arrow the figure moves one block to the left
+            if event.key == pg.K_LEFT:
+                game.enter_side(-1)
+            #when we press down arrow the figure moves one block Down
+            if event.key == pg.K_DOWN:
+                pressing_down = True
+            #when we press right arrow the figure move one block to the right
+            if event.key == pg.K_RIGHT:
+                game.enter_side(1)
+            #when we press Esc button after the game ends the game restarts
+            if event.key == pg.K_ESCAPE:
+                game.__init__(30, 25)
+    #KEYUP is a function for seeing wheather the key is pressed or not
+    if event.type == pg.KEYUP:
+            if event.key == pg.K_DOWN:
+                pressing_down = False
+                                    #The controls of the game
+    #To fill the game with given colour
+    screen.fill(COLOUR_1)
+
+    #for creating the grid of the game
+    for i in range(game.length):
+        for j in range(game.breadth):
+            pg.draw.rect(screen, COLOUR_3, [game.a + game.enlarge * j, game.b + game.enlarge * i, game.enlarge, game.enlarge], 1)
+            if game.blocks[i][j] > 0:
+                pg.draw.rect(screen, colors[game.blocks[i][j]],
+                                 [game.a + game.enlarge * j + 1, game.b + game.enlarge * i + 1, game.enlarge - 2, game.enlarge - 1])
+
+    #for taking the coordinates of the shapes
+    if game.figure is not None:
+        for i in range(4):
+            for j in range(4):
+                p = i * 4 + j
+                if p in game.figure.shape():
+                    pg.draw.rect(screen, colors[game.figure.color],
+                                     [game.a + game.enlarge * (j + game.figure.a) + 1,
+                                      game.b + game.enlarge * (i + game.figure.b) + 1,
+                                      game.enlarge - 2, game.enlarge - 2])
+
+    #For the font and size of the texts
+    font = pg.font.SysFont('Arial', 25, True, False)
+    font1 = pg.font.SysFont('Arial', 40, True, False)
+    text = font.render("result: " + str(game.result), True, COLOUR_2)
+
+    #For printing "GameOver" when the game ends
+    text_game_over = font1.render("Game Finished", True, (215,37,3))
+    #For printing "Press Esc to Restart" when the game ends
+    text_game_over1 = font1.render("Press Esc to Restart", True, (215, 255, 0))
+
+    #Blit is a function that places the image on the screen
+    screen.blit(text, [0, 0])
+    #playsound("end.wav")
+    if game.state == "The End":
+        screen.blit(text_game_over, [20, 200])
+        screen.blit(text_game_over1, [25, 265])
+    pg.display.flip()
+    clock.tick(fps)
+pg.quit()
