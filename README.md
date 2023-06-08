@@ -1,7 +1,7 @@
 # W13.TETRIS
 Description
 
-Tetris game used to be one of the famous classic single player game in which we manuplate the falling blocks-tetriminoes(geometric shapes made up of four square blocks). Rearranging them from middle-top and freezes them, when it touchs bottom or other blocks.Once a horizontal row is completely filled(every grid of the row is filled with a block irrespective of the type of colour and shape of object) it clears from the board giving a point
+Tetris game used to be one of the famous classic single player game in which we manipulate the falling blocks-tetriminoes(geometric shapes made up of four square blocks). Rearranging them from middle-top and freezes them, when it touchs bottom or other blocks. Once a horizontal row is completely filled(every grid of the row is filled with a block irrespective of the type of colour and shape of object) it clears from the board giving a point
 
 Features
 
