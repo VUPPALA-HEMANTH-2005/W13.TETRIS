@@ -47,30 +47,7 @@ start_button = Button(100,300,start_img,0.25)
 exit_button = Button(450,300,exit_img,0.4)
 tetris_button = Button(200,0,tetris_img,0.4)
 
-run = True
-while run:
 
-#Background of main page
-    screen.fill((0,0,0))
-#Creating the start button
-    if start_button.draw() == True:
-        run = False
-        completed = False
-#Creating the exit button
-    elif exit_button.draw() == True:
-        run = False
-        completed = True
-#Creating the logo
-    elif tetris_button.draw() == True:
-        print('1')
-
-    for event in pg.event.get():
-        if event.type == pg.QUIT:
-            run = False
-    pg.display.update()
-# similarly we can add return button and exit button (functions) in the second page 
-# which can be used while running the game to return back to initial page and closing the game respectively 
-                                                                            #Till here Home page
 
 #The colours of the blocks
 colors = [
