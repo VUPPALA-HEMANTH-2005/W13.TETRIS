@@ -16,7 +16,7 @@ tetris_img = pg.image.load('Tetris.png').convert_alpha()
 
 #Creating a class for pressing the button on the screen
 class Button():
-# initializing the class
+# initializing the class Button
     def __init__(rha,x,y,image,scale):
         width = image.get_width()
         height = image.get_height()
