@@ -1,7 +1,9 @@
 # W13.TETRIS
+
 Description
 
 Tetris game used to be one of the famous classic single player game in which we manipulate the falling blocks-tetriminoes(geometric shapes made up of four square blocks). Rearranging them from middle-top and freezes them, when it touchs bottom or other blocks. Once a horizontal row is completely filled(every grid of the row is filled with a block irrespective of the type of colour and shape of object) it clears from the board giving a point
+
 
 Features
 
@@ -9,6 +11,7 @@ Interactive game play: we can play this game with basic arrow keys to operate th
 Scoring: We could earn points by filling the lines.
 Leveling: As the game goes on it becomes more challenging as we clear more lines by increasing the falling speed of tetriminoes.
 Game Over: When the Tetriminoes fill upto top of the grid(play field) the games ends.
+
 
 How to Play:
 
@@ -27,10 +30,12 @@ Up arrow: To rotate the Tetriminoes randomly(clockwise or anti-clockwise)
 clear as many lines as possible to increase your score.
 The game ends when Tetriminoes stackup to the top.
 
+
 Dependencies:
 
 The Tetris game has following dependencies,
 modules like pygame,random,playsound
+
 
 File Structure:
 
@@ -40,6 +45,7 @@ Tetris.png - The image of Tetris logo in the starting page
 start.png - The image of start button in the starting page
 exit_btn.png - The image of exit button in the starting page
 blast.wav - The sound when the line is cleared
+
 
 Contributions:
 
