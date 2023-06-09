@@ -13,17 +13,23 @@ Game Over: When the Tetriminoes fill upto top of the grid(play field) the games 
 How to Play:
 
 Extract the given file
-Insatll python3,Open a terminal and navigate to the extrated file. And run the command('Tetris.py') to access and run the file. 
+
+Insatll python3,Open a terminal and navigate to the extrated file. And run the command('Tetris.py') to access and run the file.
+
 Left arrow(<-):to move the Tetriminoes one block towards left for each press.
+
 Right arrow(->):to move the Tetriminoes one block towards right for each press.
+
 Down arrow:to move the Tetriminoes one row towards down for each press.
+
 Up arrow: To rotate the Tetriminoes randomly(clockwise or anti-clockwise)
+
 clear as many lines as possible to increase your score.
 The game ends when Tetriminoes stackup to the top.
 
 Dependencies:
 
-The Tetris game has folloeing dependencies,
+The Tetris game has following dependencies,
 modules like pygame,random,playsound
 
 File Structure:
