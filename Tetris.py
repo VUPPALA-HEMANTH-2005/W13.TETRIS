@@ -218,10 +218,10 @@ pg.init()
 # Defining background colours
 COLOUR_1 = (0, 0, 0)
 COLOUR_2 = (255,255,255)
-COLOUR_3 = (65,74,156)
+COLOUR_3 = (65,74,156)  # bluish colour
 #Size of the game screen
 size = (700, 800)
-pg.display.set_caption("Tetris")
+pg.display.set_caption("Tetris")    #displays the title of the game "Tetris" over top of the window  
 screen = pg.display.set_mode(size)
 
 
@@ -229,7 +229,7 @@ screen = pg.display.set_mode(size)
 clock = pg.time.Clock()
 fps = 60
 game = Tetris_Game(30, 25)
-no_of_blocks = 0
+no_of_blocks = 0    #initialized to 0
 
 pressing_down = False
 
@@ -238,7 +238,7 @@ while not completed:
     #The condition for the new block to come
     if game.figure is None:
         game.new_figure()
-    no_of_blocks += 1
+    no_of_blocks += 1   # now the previously initialized value is updated by 1 everytime when it passes through the loop
 
     #When the result is above 100000 the game resets
     if no_of_blocks > 100000:
@@ -301,7 +301,7 @@ while not completed:
     font = pg.font.SysFont('Arial', 25, True, False)
     font1 = pg.font.SysFont('Arial', 40, True, False)
     text = font.render("result: " + str(game.result), True, COLOUR_2)
-
+    
     #For printing "GameOver" when the game ends
     text_game_over = font1.render("Game Finished", True, (215,37,3))
     #For printing "Press Esc to Restart" when the game ends
