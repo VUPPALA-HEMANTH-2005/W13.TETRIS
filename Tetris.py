@@ -240,7 +240,7 @@ while not completed:
         game.new_figure()
     no_of_blocks += 1   # now the previously initialized value is updated by 1 everytime when it passes through the loop
 
-    #When the result is above 100000 the game resets
+    #When the no.of blocks fallen is above 100000 the game resets
     if no_of_blocks > 100000:
         no_of_blocks = 0
 
