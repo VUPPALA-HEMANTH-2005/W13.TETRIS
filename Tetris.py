@@ -68,7 +68,7 @@ while run:
 #Creating the logo
 
     elif tetris_button.draw() == True:
-        print('1')
+        pass
 
     for event in pg.event.get():
         if event.type == pg.QUIT:
